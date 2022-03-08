@@ -11,3 +11,11 @@ export function fetchArticles(topic) {
 			return articles
 		})
 }
+
+export function fetchArticleById(article_id) {
+	return ncNewsApi
+		.get(`/articles/${article_id}`)
+		.then(({ data: { article } }) => {
+			return article
+		})
+}

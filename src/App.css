@@ -224,6 +224,7 @@ span {
 	background-image: url("https://www.gffoodservice.com.au/content/uploads/2019/08/culinary_terms-hero-1-@2x-1.jpg");
 	background-size: 668px 78px;
 	color: #fca311;
+	/* object-fit: cover; */
 }
 .article-content {
 	width: 100%;
