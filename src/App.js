@@ -13,7 +13,7 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/articles/topics/:topic' element={<ArticlesByTopic />} />
+				<Route path='/articles/topic/:topic' element={<ArticlesByTopic />} />
 				<Route path='/articles/:article_id' element={<ArticlePage />} />
 			</Routes>
 			<Footer />

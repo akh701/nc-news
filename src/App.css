@@ -90,6 +90,10 @@ body {
 	border-radius: 1000px;
 	font-weight: bold;
 }
+.header-topics li a {
+	text-decoration: none;
+	color: white;
+}
 
 .footer {
 	align-items: center;
@@ -194,15 +198,33 @@ span {
 	color: white;
 }
 
-.topic-header {
+.topic-banner {
 	background-color: #fca311;
 	padding: 1.5rem;
 	width: 100%;
 	margin: 0px;
 	text-align: center;
 	font-size: xx-large;
+	font-weight: bold;
+}
+.topic-banner.football {
+	background-image: url("https://cdn.britannica.com/51/190751-050-147B93F7/soccer-ball-goal.jpg");
+	/* background-repeat: no-repeat; */
+	background-size: 668px 78px;
+	color: white;
+}
+.topic-banner.coding {
+	background-image: url("https://i1.wp.com/www.burning-glass.com/wp-content/uploads/coding_400x267-1.jpg?fit=400%2C267&ssl=1");
+	/* background-repeat: no-repeat; */
+	background-size: 668px 78px;
+	color: white;
 }
 
+.topic-banner.cooking {
+	background-image: url("https://www.gffoodservice.com.au/content/uploads/2019/08/culinary_terms-hero-1-@2x-1.jpg");
+	background-size: 668px 78px;
+	color: #fca311;
+}
 .article-content {
 	width: 100%;
 	text-align: center;

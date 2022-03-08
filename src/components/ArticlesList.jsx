@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import * as api from "../api"
 import ArticleCard from "./ArticleCard"
 import LoadingCircle from "./LoadingCircle"
@@ -7,11 +8,13 @@ export default function ArticlesList() {
 	const [articlesList, setArticlesList] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
+	const { topic } = useParams()
+
 	useEffect(() => {
 		setIsLoading(true)
 		setError(null)
 		api
-			.fetchArticles()
+			.fetchArticles(topic)
 			.then(articles => {
 				setIsLoading(false)
 				setArticlesList(articles)
@@ -21,7 +24,7 @@ export default function ArticlesList() {
 				setIsLoading(false)
 				return err
 			})
-	}, [])
+	}, [topic])
 
 	if (isLoading) {
 		return (

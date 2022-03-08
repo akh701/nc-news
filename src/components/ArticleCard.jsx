@@ -23,7 +23,7 @@ export default function ArticleCard({
 					{votes}
 				</li>
 				<li className='footer-item'>
-					<Link to={`/articles/topics/${topic}`}>
+					<Link to={`/articles/topic/${topic}`}>
 						<span>Topic: </span>
 						{topic}
 					</Link>
