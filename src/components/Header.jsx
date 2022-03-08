@@ -22,9 +22,15 @@ export default function Header() {
 				</nav>
 				<div className='sub-nav'>
 					<ul className='header-topics'>
-						<li>Football</li>
-						<li>Coding</li>
-						<li>Cooking</li>
+						<li>
+							<Link to='articles/topic/football'>Football</Link>
+						</li>
+						<li>
+							<Link to='articles/topic/coding'>Coding</Link>
+						</li>
+						<li>
+							<Link to='articles/topic/cooking'>Cooking</Link>
+						</li>
 					</ul>
 				</div>
 			</header>
