@@ -12,12 +12,13 @@ export default function ArticlesList() {
 
 	useEffect(() => {
 		setIsLoading(true)
-		setError(null)
+
 		api
 			.fetchArticles(topic)
 			.then(articles => {
 				setIsLoading(false)
 				setArticlesList(articles)
+				setError(null)
 			})
 			.catch(err => {
 				setError("something went wrong")
