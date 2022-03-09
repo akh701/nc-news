@@ -42,11 +42,12 @@ export default function ArticlePage() {
 	return (
 		<>
 			<main>
-				<h5>Breadcrumb</h5>
+				<h5>{window.location.href}</h5>
 				<ArticleContent
 					title={singleArticle.title}
 					body={singleArticle.body}
 					author={singleArticle.author}
+					votes={singleArticle.votes}
 					created_at={singleArticle.created_at}
 				/>
 				<AddComment />
