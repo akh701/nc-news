@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import RegisteredUsers from "./RegisteredUsers"
 
 export default function Header({ loggedInUser }) {
-	console.log(loggedInUser)
 	return (
 		<>
 			<header className='full-screen-header'>
