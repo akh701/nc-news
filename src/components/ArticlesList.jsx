@@ -44,6 +44,7 @@ export default function ArticlesList() {
 			{articlesList.map(article => {
 				return (
 					<ArticleCard
+						key={article.article_id}
 						id={article.article_id}
 						title={article.title}
 						votes={article.votes}

@@ -21,12 +21,13 @@ export default function RegisteredUsers() {
 				<div className='dropdown-content'>
 					{allUsers.map((user, index) => {
 						return (
-							<>
-								<a key={index} onClick={() => setLoggedInUser(user)}>
-									{user.username}
-								</a>
-								<hr />
-							</>
+							<button
+								className='btn'
+								key={index}
+								onClick={() => setLoggedInUser(user)}
+							>
+								{user.username}
+							</button>
 						)
 					})}
 				</div>

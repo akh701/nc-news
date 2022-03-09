@@ -13,7 +13,9 @@ export default function Header({ loggedInUser }) {
 					</Link>
 
 					<ul className='nav-list'>
-						<li>Hello {loggedInUser.username}</li>
+						<li>
+							{loggedInUser.username ? `Hello ${loggedInUser.username}` : ""}
+						</li>
 						<li>
 							<RegisteredUsers />
 						</li>
