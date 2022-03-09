@@ -11,3 +11,9 @@ export function fetchArticles(topic) {
 			return articles
 		})
 }
+
+export function fetchUsers() {
+	return ncNewsApi.get("/users").then(({ data: { users } }) => {
+		return users
+	})
+}

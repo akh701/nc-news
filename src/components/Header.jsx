@@ -1,8 +1,10 @@
 import React from "react"
 import logo from "../logo.png"
 import { Link } from "react-router-dom"
+import RegisteredUsers from "./RegisteredUsers"
 
-export default function Header() {
+export default function Header({ loggedInUser }) {
+	console.log(loggedInUser)
 	return (
 		<>
 			<header className='full-screen-header'>
@@ -12,9 +14,11 @@ export default function Header() {
 					</Link>
 
 					<ul className='nav-list'>
+						<li>Hello {loggedInUser.username}</li>
 						<li>
-							<Link to='login'>Login</Link>
+							<RegisteredUsers />
 						</li>
+
 						<li>
 							<Link to='sign-up'>SignUp</Link>
 						</li>
