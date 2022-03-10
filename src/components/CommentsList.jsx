@@ -42,10 +42,10 @@ export default function CommentsList({ totalComments, newComment }) {
 			<div className='comments-header'>Total Comments: {totalComments}</div>
 			<div className='comments-container'>
 				<ul>
-					{comments.map((comment, index) => {
+					{comments.map(comment => {
 						return (
 							<CommentCard
-								id={index}
+								id={comment.comment_id}
 								author={comment.author}
 								body={comment.body}
 								date={comment.created_at.slice(0, 10)}

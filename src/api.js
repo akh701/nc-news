@@ -52,3 +52,9 @@ export function postNewComment(article_id, newComment) {
 			return comment
 		})
 }
+
+export function deleteComment(comment_id) {
+	return ncNewsApi.delete(`/comments/${comment_id}`).catch(err => {
+		return err
+	})
+}
