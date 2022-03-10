@@ -7,6 +7,7 @@ import Header from "./components/Header"
 import ArticlesByTopic from "./components/ArticlesByTopic"
 import ArticlePage from "./components/ArticlePage"
 import { UserContext } from "./contexts/UserContext"
+import LoginPage from "./components/LoginPage"
 
 function App() {
 	const [loggedInUser, setLoggedInUser] = useState({})
@@ -15,6 +16,7 @@ function App() {
 			<Header loggedInUser={loggedInUser} />
 			<Routes>
 				<Route path='/' element={<Home />} />
+				<Route path='/login' element={<LoginPage />} />
 				<Route path='/articles/topic/:topic' element={<ArticlesByTopic />} />
 				<Route path='/articles/:article_id' element={<ArticlePage />} />
 			</Routes>
