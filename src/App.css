@@ -265,6 +265,9 @@ span {
 	width: 100%;
 	text-align: center;
 }
+.article-content {
+	padding: 0;
+}
 
 .article-content li {
 	text-align: center;
@@ -375,4 +378,20 @@ hr {
 
 .dropdown:hover .dropbtn {
 	/* background-color: #3e8e41; */
+}
+
+.error {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+.success {
+	padding: 20px;
+	background-color: #90be6d;
+	color: white;
+	text-align: center;
+	width: 100%;
 }
