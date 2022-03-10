@@ -344,14 +344,16 @@ hr {
 
 .comments-container {
 	padding: 1rem;
-	margin: 5rem 1rem;
+	margin: 1rem 1rem;
 	border: 1px solid #e5e5e5;
 	/* margin-bottom: 60px; */
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 }
-
+.comment-container ul {
+	padding: 0;
+}
 .comment-likes {
 	float: right;
 }

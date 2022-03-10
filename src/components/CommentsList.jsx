@@ -12,7 +12,7 @@ export default function CommentsList() {
 			setComments(data)
 		})
 	}, [article_id])
-	console.log(comments)
+
 	return (
 		<div className='comments-container'>
 			<ul>
