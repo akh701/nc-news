@@ -51,9 +51,13 @@ export default function ArticlePage() {
 					votes={singleArticle.votes}
 					created_at={singleArticle.created_at}
 				/>
+
+				<AddComment articalAuthor={singleArticle.author} />
+
 				<AddComment />
 
 				<CommentsList />
+
 			</main>
 		</>
 	)

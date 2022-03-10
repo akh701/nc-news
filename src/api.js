@@ -45,3 +45,14 @@ export function patchArticleVote(article_id, votes) {
 			return votes
 		}
 	)
+
+}
+
+export function postNewComment(article_id, newComment) {
+	return ncNewsApi
+		.post(`/articles/${article_id}/comments`, newComment)
+		.then(({ data }) => {
+			return data
+		})
+}
+
