@@ -1,4 +1,5 @@
 import React from "react"
+import Votes from "./Votes"
 
 export default function ArticleContent({
 	title,
@@ -23,8 +24,7 @@ export default function ArticleContent({
 			<ul className='article-info'>
 				<li>Author: {author}</li>
 				<li>
-					Votes: {votes} <button className='btn vote decrement'>-</button>
-					<button className='btn vote increment'>+</button>
+					Votes: <Votes votes={votes} author={author} />
 				</li>
 
 				<li>Published: {created_at.slice(0, 10)}</li>

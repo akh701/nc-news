@@ -25,10 +25,23 @@ export function fetchUsers() {
 	})
 }
 
+
 export function fetchComments(article_id) {
 	return ncNewsApi
 		.get(`/articles/${article_id}/comments`)
 		.then(({ data: { comments } }) => {
 			return comments
 		})
+
 }
+
+export function patchArticleVote(article_id, votes) {
+	return ncNewsApi.patch(`/articles/${article_id}`, { inc_votes: votes }).then(
+		({
+			data: {
+				article: { votes },
+			},
+		}) => {
+			return votes
+		}
+	)
