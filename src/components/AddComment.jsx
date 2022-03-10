@@ -90,23 +90,25 @@ export default function AddComment({
 				/>
 			)}
 
-			<label className='label'>Add comment: </label>
-			<textarea
-				disabled={articalAuthor === loggedInUser.username}
-				name='add-comment'
-				type='text'
-				className='add-comment'
-				placeholder='add comment'
-				value={newComment.body}
-				onChange={handleInputComment}
-			/>
-			<button
-				disabled={articalAuthor === loggedInUser.username}
-				onClick={submitNewComment}
-				className='btn submit-comment'
-			>
-				Post
-			</button>
+			<div className='comment-label'>Add comment: </div>
+			<div className='comment-box'>
+				<textarea
+					disabled={articalAuthor === loggedInUser.username}
+					name='add-comment'
+					type='text'
+					className='add-comment'
+					placeholder='add comment'
+					value={newComment.body}
+					onChange={handleInputComment}
+				/>
+				<button
+					disabled={articalAuthor === loggedInUser.username}
+					onClick={submitNewComment}
+					className='btn submit-comment'
+				>
+					Post
+				</button>
+			</div>
 		</div>
 	)
 }

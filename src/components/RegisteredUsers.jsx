@@ -16,7 +16,7 @@ export default function RegisteredUsers() {
 		<>
 			<ul className='dropdown'>
 				<li className='dropbtn'>
-					{loggedInUser.username ? "Choose another user" : "login"}
+					{loggedInUser.username ? "Pick user" : "login"}
 				</li>
 				<li className='dropdown-content'>
 					<ul>

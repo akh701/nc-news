@@ -17,7 +17,7 @@ export default function CommentsList({ totalComments, newComment }) {
 			.fetchComments(article_id)
 			.then(data => {
 				setIsLoading(false)
-				setComments(data)
+				setComments(data.reverse())
 			})
 			.catch(err => {
 				setError("something went wrong please try to refresh the page")
