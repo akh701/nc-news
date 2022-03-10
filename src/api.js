@@ -25,14 +25,12 @@ export function fetchUsers() {
 	})
 }
 
-
 export function fetchComments(article_id) {
 	return ncNewsApi
 		.get(`/articles/${article_id}/comments`)
 		.then(({ data: { comments } }) => {
 			return comments
 		})
-
 }
 
 export function patchArticleVote(article_id, votes) {
@@ -45,14 +43,12 @@ export function patchArticleVote(article_id, votes) {
 			return votes
 		}
 	)
-
 }
 
 export function postNewComment(article_id, newComment) {
 	return ncNewsApi
 		.post(`/articles/${article_id}/comments`, newComment)
-		.then(({ data }) => {
-			return data
+		.then(({ data: { comment } }) => {
+			return comment
 		})
 }
-

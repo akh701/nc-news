@@ -1,11 +1,15 @@
 * {
 	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
 }
 
 body {
 	margin: 0;
-	font-family: "Hubballi";
+	font-family: "Open Sans", sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.05em;
 	color: #000000;
+	background-color: #edf6f9;
 }
 
 .btn {
@@ -23,8 +27,8 @@ body {
 }
 
 .full-screen-header {
-	height: 10vh;
-
+	/* height: 10vh; */
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -37,7 +41,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #14213d;
+	background-color: white;
+	border-bottom: 3px solid black;
 	padding: 0.5rem 1rem;
 }
 .nav-top {
@@ -57,12 +62,13 @@ body {
 	padding: 0;
 	display: flex;
 	list-style-type: none;
+	color: #000000;
 }
 
 .nav-list a {
 	text-decoration: none;
 	margin-left: 1rem;
-	color: white;
+	color: black;
 }
 
 .nav-list a:hover {
@@ -70,29 +76,33 @@ body {
 }
 
 .sub-nav {
-	background-color: #fca311;
-	padding: 1.5rem;
-	padding-bottom: 0;
-	width: 100vw;
-	margin-top: 100px;
+	background-color: #00af9f;
+	padding: 0;
+	width: 100%;
+	margin-top: 70px;
 }
 .header-topics {
 	display: flex;
 	list-style-type: none;
 	/* justify-content: space-between; */
 	align-items: center;
+	margin-left: 29px;
 }
 .header-topics li {
-	color: white;
-	background-color: #14213d;
-	margin: 0.5rem;
-	padding: 0.5rem 1rem;
-	border-radius: 1000px;
-	font-weight: bold;
+	color: black;
+	background-color: #edf6f9;
+	margin: 0.25em;
+	padding: 6px 15px;
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: smaller;
+}
+ul {
+	padding: 0px;
 }
 .header-topics li a {
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 .footer {
@@ -121,8 +131,8 @@ body {
 
 main {
 	padding: 1rem;
-	margin: 5rem 1rem;
-	border: 1px solid #e5e5e5;
+	margin: 1rem 1rem;
+	/* border: 1px solid #e5e5e5; */
 	margin-bottom: 60px;
 	display: flex;
 	flex-wrap: wrap;
@@ -143,18 +153,19 @@ main {
 
 .card {
 	width: 100%;
-	margin-bottom: 1rem;
-	background-color: white;
-	border: 1px solid #a4a4a4;
+	margin-bottom: 1.5rem;
+	background-color: #edf6f9;
+	border: 1px solid #e29578;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	display: inline-block;
-	box-shadow: 0 0 5px 0 #777;
+	box-shadow: 0 0 5px 0 #c9c9c9;
 }
 .card_details {
-	padding: 5px;
+	padding: 3px 10px;
 	justify-content: end;
+	background-color: #ffddd2;
 }
 .card_details span {
 	padding: 4px 15px 4px 4px;
@@ -162,105 +173,49 @@ main {
 }
 
 .card_head {
-	color: #000000;
+	color: #006d77;
 	height: 30%;
 	width: 100%;
-	padding: 0.5rem;
+	padding: 12px;
 	margin: 0px;
 	display: inline-block;
 	justify-content: left;
 	align-items: center;
 	text-align: left;
 	cursor: pointer;
-	background: #219ebc;
 }
 .card_head h3 {
-	padding: 3px;
+	padding: 3px 0px;
 	margin: 0;
 }
 .card_head h5 a {
 	text-decoration: none;
-	color: #ffb703;
+	color: #006d77;
 }
 .card_readmore {
-	background: #8ecae6;
+	color: #006d77;
+	padding-top: 2px;
 	float: right;
 }
+
 .card_readmore a {
 	text-decoration: none;
 	color: white;
 }
 
-.card-footer {
-	padding: 0.5rem;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	justify-content: center;
-	color: #495057;
-	display: grid;
-	grid-template-columns: auto auto;
-	column-gap: 5px;
-	row-gap: 5px;
-}
-
-.footer-item {
-	list-style-type: none;
-	align-items: center;
-	border: 1px solid #e5e5e5;
-	border-radius: 10000px;
-	text-align: center;
-	padding: 0.5rem;
-	display: inline-block;
-}
-
-.footer-item a {
-	text-decoration: none;
-	color: #495057;
-}
-
-span {
+/* span {
 	font-weight: bold;
-}
-.read-more {
-	text-decoration: none;
-	background: #14213d;
-	text-align: center;
-	padding-top: 0.5em;
-	font-weight: bold;
-}
-
-.footer-item.read-more a {
-	color: white;
-}
+} */
 
 .topic-banner {
-	background-color: #fca311;
-	padding: 1.5rem;
 	width: 100%;
 	margin: 0px;
-	text-align: center;
-	font-size: xx-large;
-	font-weight: bold;
-}
-.topic-banner.football {
-	background-image: url("https://cdn.britannica.com/51/190751-050-147B93F7/soccer-ball-goal.jpg");
-	/* background-repeat: no-repeat; */
-	background-size: 668px 78px;
-	color: white;
-}
-.topic-banner.coding {
-	background-image: url("https://i1.wp.com/www.burning-glass.com/wp-content/uploads/coding_400x267-1.jpg?fit=400%2C267&ssl=1");
-	/* background-repeat: no-repeat; */
-	background-size: 668px 78px;
-	color: white;
+	text-align: left;
+	font-size: x-large;
+	font-weight: 900;
+	color: black;
 }
 
-.topic-banner.cooking {
-	background-image: url("https://www.gffoodservice.com.au/content/uploads/2019/08/culinary_terms-hero-1-@2x-1.jpg");
-	background-size: 668px 78px;
-	color: #fca311;
-	/* object-fit: cover; */
-}
 .article-content {
 	width: 100%;
 	text-align: center;
@@ -279,7 +234,7 @@ main h5 {
 }
 
 .article-info {
-	color: #003049;
+	color: #006d77;
 	font-weight: bold;
 	display: flex;
 	flex-wrap: wrap;
@@ -293,16 +248,17 @@ main h5 {
 	color: white;
 	font-weight: bold;
 	border-radius: 10000px;
+	margin-left: 3px;
 }
 .decrement {
 	background-color: #fca311;
 }
 .increment {
-	background-color: #14213d;
+	background-color: #00af9f;
 }
 .vote.btn:hover,
 .btn:focus {
-	background-color: hsl(0, 65%, 45%);
+	background-color: #e29578;
 	box-shadow: 0 0 5px 0 hsl(0, 0%, 70%);
 }
 hr {
@@ -310,22 +266,27 @@ hr {
 	/* box-shadow: 0 0 3px 0 #fca311; */
 }
 
-.add-comment-form {
+.add-comment-container {
 	width: 100%;
+	padding: 10px 0px;
 	display: flex;
 	/* display: inline-block; */
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
+}
+.label {
+	/* width: 100%; */
 }
 
 .add-comment {
-	width: 50vw;
-	margin: 0.25rem;
+	width: 100%;
 	padding: 0.5em;
 	font-size: inherit;
 	border: 1px solid #aaa;
 	resize: none;
 	outline: none;
+	height: 50px;
+	border-radius: 2px;
 }
 .add-comment:focus {
 	border-color: #fca311;
@@ -336,26 +297,42 @@ hr {
 	padding: 0.5em;
 	display: inline-block;
 }
+.submit-comment {
+	height: 50px;
+	border-radius: 2px;
+	border-left: none;
+}
 
 /* Registered users drop down menu */
 .dropbtn {
 	list-style-type: none;
-
+	font-size: small;
+	font-weight: bold;
 	border: none;
 	cursor: pointer;
+	color: black;
 }
-
+.users {
+	color: #000000;
+	width: 100%;
+	padding: 3px;
+	border-top: 1px solid;
+	list-style-type: none;
+	cursor: pointer;
+}
 .dropdown {
 	position: relative;
+
 	display: inline-block;
 }
 
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
+	right: 0;
+	/* background-color: #f9f9f9; */
 	min-width: 100px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	/* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
 	z-index: 1;
 	float: inline-end;
 }
@@ -369,7 +346,7 @@ hr {
 }
 
 .dropdown-content a:hover {
-	background-color: #f1f1f1;
+	/* background-color: #f1f1f1; */
 }
 
 .dropdown:hover .dropdown-content {
@@ -379,7 +356,6 @@ hr {
 .dropdown:hover .dropbtn {
 	/* background-color: #3e8e41; */
 }
-
 
 .error {
 	padding: 20px;
@@ -436,19 +412,33 @@ hr {
 	border: 1px solid #999;
 	font-size: 20px;
 }
+.comments-header {
+	background: #ededed;
+	font-weight: bold;
+	background-color: #ffddd2;
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px 10px;
+}
 .comments-container {
 	padding: 1rem;
-	margin: 1rem 1rem;
 	border: 1px solid #e5e5e5;
 	/* margin-bottom: 60px; */
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 }
-.comment-container ul {
-	padding: 0;
+.comment-card {
+	padding: 10px;
+	list-style-type: none;
+	margin-bottom: 15px;
+	background-color: #b07e730f;
 }
+
+.comment-card hr {
+	border-top: 1px dashed #a0732553;
+}
+
 .comment-likes {
 	float: right;
-
 }

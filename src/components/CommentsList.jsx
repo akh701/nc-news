@@ -4,7 +4,7 @@ import LoadingCircle from "./LoadingCircle"
 import * as api from "../api"
 import { useParams } from "react-router-dom"
 
-export default function CommentsList() {
+export default function CommentsList({ totalComments, newComment }) {
 	const [comments, setComments] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
@@ -24,7 +24,7 @@ export default function CommentsList() {
 				setIsLoading(false)
 				return err
 			})
-	}, [article_id])
+	}, [article_id, newComment])
 
 	if (isLoading) {
 		return (
@@ -38,20 +38,23 @@ export default function CommentsList() {
 	}
 
 	return (
-		<div className='comments-container'>
-			<ul>
-				{comments.map((comment, index) => {
-					return (
-						<CommentCard
-							id={index}
-							author={comment.author}
-							body={comment.body}
-							date={comment.created_at.slice(0, 10)}
-							votes={comment.votes}
-						/>
-					)
-				})}
-			</ul>
-		</div>
+		<>
+			<div className='comments-header'>Total Comments: {totalComments}</div>
+			<div className='comments-container'>
+				<ul>
+					{comments.map((comment, index) => {
+						return (
+							<CommentCard
+								id={index}
+								author={comment.author}
+								body={comment.body}
+								date={comment.created_at.slice(0, 10)}
+								votes={comment.votes}
+							/>
+						)
+					})}
+				</ul>
+			</div>
+		</>
 	)
 }
