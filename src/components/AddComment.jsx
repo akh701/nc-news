@@ -2,26 +2,46 @@ import React, { useState, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import * as api from "../api"
 import { UserContext } from "../contexts/UserContext"
+import Popup from "./Popup"
+import LoadingCircle from "./LoadingCircle"
 
 export default function AddComment({ articalAuthor }) {
 	const [newComment, setNewComment] = useState({ body: "", username: "" })
 	const { loggedInUser } = useContext(UserContext)
 	const [error, setError] = useState(null)
 	const [commentSuccess, setCommentSuccess] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 	const { article_id } = useParams()
 	let navigate = useNavigate()
+
+	const [isOpen, setIsOpen] = useState(false)
+
+	const togglePopup = () => {
+		setIsOpen(!isOpen)
+	}
 
 	const submitNewComment = () => {
 		if (!loggedInUser.username) {
 			navigate("/login")
 		}
 
-		api.postNewComment(article_id, newComment).catch(err => {
-			setError("something went wrong please refresh the page and try again")
+		if (newComment.body.length) {
+			setIsLoading(true)
+			api
+				.postNewComment(article_id, newComment)
+				.then(() => {
+					setIsLoading(false)
+				})
+				.catch(err => {
+					setError("something went wrong please refresh the page and try again")
+					setIsLoading(false)
+					return err
+				})
 
-			return err
-		})
-		setCommentSuccess(true)
+			setCommentSuccess(true)
+		}
+
+		togglePopup()
 	}
 	const handleInputComment = e => {
 		e.preventDefault()
@@ -35,17 +55,32 @@ export default function AddComment({ articalAuthor }) {
 			</h3>
 		)
 	}
-	if (newComment === "" || newComment === " ") {
-		setError("You cannot post an empty comment")
+	if (isLoading) {
+		return (
+			<h1>
+				<LoadingCircle /> Posting
+			</h1>
+		)
 	}
-	if (commentSuccess) {
-		return <h3 className='success'>your comment has been posted</h3>
-	}
+
 	if (error) {
 		return <h3 className='error'>{error}</h3>
 	}
 	return (
 		<div className='add-comment-form'>
+			{isOpen && commentSuccess && (
+				<Popup
+					content={<h3 className='success'>your comment has been posted</h3>}
+					handleClose={togglePopup}
+				/>
+			)}
+			{isOpen && newComment.body.length === 0 && (
+				<Popup
+					content={<h3 className='error'>You cannot post an empty comment</h3>}
+					handleClose={togglePopup}
+				/>
+			)}
+
 			<label className='label'>Add comment: </label>
 			<textarea
 				disabled={articalAuthor === loggedInUser.username}
