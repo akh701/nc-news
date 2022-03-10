@@ -14,36 +14,21 @@ export default function ArticleCard({
 	return (
 		<li key={id} className='card'>
 			<Link to={`/articles/${id}`}>
-				<h3>{title}</h3>
+				<div className='card_head'>
+					<h3>{title}</h3>
+					<h5>
+						By <Link to={`/author/${author}`}>{author}</Link>
+					</h5>
+				</div>
 			</Link>
-
-			<ul className='card-footer'>
-				<li className='footer-item'>
-					<span>Votes: </span>
-					{votes}
-				</li>
-				<li className='footer-item'>
-					<Link to={`/articles/topic/${topic}`}>
-						<span>Topic: </span>
-						{topic}
-					</Link>
-				</li>
-				<li className='footer-item'>
-					<span>Comments: </span>
-					{comment_count}
-				</li>
-				<li className='footer-item'>
-					<span>Author: </span>
-					{author}
-				</li>
-				<li className='footer-item'>
-					<span>Date: </span> {created_at}
-				</li>
-
-				<li className='footer-item read-more'>
+			<div className='card_details'>
+				<span className='carddetails'>Votes: {votes}</span>
+				<span>Comments: {comment_count}</span>
+				<span>Date: {created_at}</span>
+				<button className='card_readmore btn'>
 					<Link to={`/articles/${id}`}>Read</Link>
-				</li>
-			</ul>
+				</button>
+			</div>
 		</li>
 	)
 }

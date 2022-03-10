@@ -24,7 +24,7 @@ export default function ArticlePage() {
 			.catch(err => {
 				setError("something went wrong")
 				setIsLoading(false)
-				console.log(err)
+
 				return err
 			})
 	}, [article_id])

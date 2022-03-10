@@ -40,21 +40,23 @@ export default function ArticlesList() {
 	}
 
 	return (
-		<>
-			{articlesList.map(article => {
-				return (
-					<ArticleCard
-						key={article.article_id}
-						id={article.article_id}
-						title={article.title}
-						votes={article.votes}
-						topic={article.topic}
-						comment_count={article.comment_count}
-						author={article.author}
-						created_at={article.created_at.slice(0, 10)}
-					/>
-				)
-			})}
-		</>
+		<div className='articles_container'>
+			<ul>
+				{articlesList.map(article => {
+					return (
+						<ArticleCard
+							key={article.article_id}
+							id={article.article_id}
+							title={article.title}
+							votes={article.votes}
+							topic={article.topic}
+							comment_count={article.comment_count}
+							author={article.author}
+							created_at={article.created_at.slice(0, 10)}
+						/>
+					)
+				})}
+			</ul>
+		</div>
 	)
 }
