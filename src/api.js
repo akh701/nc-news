@@ -18,10 +18,17 @@ export function fetchArticleById(article_id) {
 		.then(({ data: { article } }) => {
 			return article
 		})
-
 }
 export function fetchUsers() {
 	return ncNewsApi.get("/users").then(({ data: { users } }) => {
 		return users
 	})
-  }
+}
+
+export function fetchComments(article_id) {
+	return ncNewsApi
+		.get(`/articles/${article_id}/comments`)
+		.then(({ data: { comments } }) => {
+			return comments
+		})
+}

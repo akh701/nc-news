@@ -341,3 +341,17 @@ hr {
 .dropdown:hover .dropbtn {
 	/* background-color: #3e8e41; */
 }
+
+.comments-container {
+	padding: 1rem;
+	margin: 5rem 1rem;
+	border: 1px solid #e5e5e5;
+	/* margin-bottom: 60px; */
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.comment-likes {
+	float: right;
+}
