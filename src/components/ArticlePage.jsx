@@ -5,6 +5,7 @@ import ArticleContent from "./ArticleContent"
 import AddComment from "./AddComment"
 import * as api from "../api"
 import LoadingCircle from "./LoadingCircle"
+import CommentsList from "./CommentsList"
 
 export default function ArticlePage() {
 	const [isLoading, setIsLoading] = useState(true)
@@ -50,7 +51,13 @@ export default function ArticlePage() {
 					votes={singleArticle.votes}
 					created_at={singleArticle.created_at}
 				/>
+
 				<AddComment articalAuthor={singleArticle.author} />
+
+				<AddComment />
+
+				<CommentsList />
+
 			</main>
 		</>
 	)
