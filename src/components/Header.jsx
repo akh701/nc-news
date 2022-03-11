@@ -19,10 +19,6 @@ export default function Header({ loggedInUser }) {
 						<li>
 							<RegisteredUsers />
 						</li>
-
-						<li>
-							<Link to='sign-up'>SignUp</Link>
-						</li>
 					</ul>
 				</nav>
 				<div className='sub-nav'>

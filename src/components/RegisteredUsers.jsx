@@ -16,21 +16,23 @@ export default function RegisteredUsers() {
 		<>
 			<ul className='dropdown'>
 				<li className='dropbtn'>
-					{loggedInUser.username ? "Choose another user" : "login"}
+					{loggedInUser.username ? "Pick user" : "login"}
 				</li>
-				<div className='dropdown-content'>
-					{allUsers.map((user, index) => {
-						return (
-							<button
-								className='btn'
-								key={index}
-								onClick={() => setLoggedInUser(user)}
-							>
-								{user.username}
-							</button>
-						)
-					})}
-				</div>
+				<li className='dropdown-content'>
+					<ul>
+						{allUsers.map((user, index) => {
+							return (
+								<li
+									className='users'
+									key={index}
+									onClick={() => setLoggedInUser(user)}
+								>
+									{user.username}
+								</li>
+							)
+						})}
+					</ul>
+				</li>
 			</ul>
 		</>
 	)

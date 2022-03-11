@@ -8,6 +8,7 @@ import LoadingCircle from "./LoadingCircle"
 import CommentsList from "./CommentsList"
 
 export default function ArticlePage() {
+	const [commentSuccess, setCommentSuccess] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
 	const [singleArticle, setSingleArticle] = useState({})
 	const [error, setError] = useState(null)
@@ -51,13 +52,17 @@ export default function ArticlePage() {
 					votes={singleArticle.votes}
 					created_at={singleArticle.created_at}
 				/>
+				<AddComment
+					articalAuthor={singleArticle.author}
+					commentSuccess={commentSuccess}
+					setCommentSuccess={setCommentSuccess}
+				/>
 
-				<AddComment articalAuthor={singleArticle.author} />
-
-				<AddComment />
-
-				<CommentsList />
-
+				<CommentsList
+					articalAuthor={singleArticle.author}
+					totalComments={singleArticle.comment_count}
+					newComment={commentSuccess}
+				/>
 			</main>
 		</>
 	)

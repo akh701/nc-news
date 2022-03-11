@@ -25,9 +25,10 @@ export default function ArticleCard({
 				<span className='carddetails'>Votes: {votes}</span>
 				<span>Comments: {comment_count}</span>
 				<span>Date: {created_at}</span>
-				<button className='card_readmore btn'>
-					<Link to={`/articles/${id}`}>Read</Link>
-				</button>
+
+				<Link className='card_readmore' to={`/articles/${id}`}>
+					Read more
+				</Link>
 			</div>
 		</li>
 	)

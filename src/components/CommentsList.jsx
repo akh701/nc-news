@@ -4,11 +4,16 @@ import LoadingCircle from "./LoadingCircle"
 import * as api from "../api"
 import { useParams } from "react-router-dom"
 
-export default function CommentsList() {
+export default function CommentsList({
+	totalComments,
+	newComment,
+	articalAuthor,
+}) {
 	const [comments, setComments] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const { article_id } = useParams()
+	const [deleted, setDeleted] = useState(false)
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -17,14 +22,14 @@ export default function CommentsList() {
 			.fetchComments(article_id)
 			.then(data => {
 				setIsLoading(false)
-				setComments(data)
+				setComments(data.reverse())
 			})
 			.catch(err => {
 				setError("something went wrong please try to refresh the page")
 				setIsLoading(false)
 				return err
 			})
-	}, [article_id])
+	}, [article_id, newComment, deleted])
 
 	if (isLoading) {
 		return (
@@ -38,20 +43,25 @@ export default function CommentsList() {
 	}
 
 	return (
-		<div className='comments-container'>
-			<ul>
-				{comments.map((comment, index) => {
-					return (
-						<CommentCard
-							id={index}
-							author={comment.author}
-							body={comment.body}
-							date={comment.created_at.slice(0, 10)}
-							votes={comment.votes}
-						/>
-					)
-				})}
-			</ul>
-		</div>
+		<>
+			<div className='comments-header'>Total Comments: {totalComments}</div>
+			<div className='comments-container'>
+				<ul>
+					{comments.map(comment => {
+						return (
+							<CommentCard
+								id={comment.comment_id}
+								commentAuthor={comment.author}
+								body={comment.body}
+								date={comment.created_at.slice(0, 10)}
+								votes={comment.votes}
+								articalAuthor={articalAuthor}
+								setDeleted={setDeleted}
+							/>
+						)
+					})}
+				</ul>
+			</div>
+		</>
 	)
 }
