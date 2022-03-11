@@ -59,6 +59,7 @@ export default function ArticlePage() {
 				/>
 
 				<CommentsList
+					articalAuthor={singleArticle.author}
 					totalComments={singleArticle.comment_count}
 					newComment={commentSuccess}
 				/>

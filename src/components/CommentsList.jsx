@@ -4,11 +4,16 @@ import LoadingCircle from "./LoadingCircle"
 import * as api from "../api"
 import { useParams } from "react-router-dom"
 
-export default function CommentsList({ totalComments, newComment }) {
+export default function CommentsList({
+	totalComments,
+	newComment,
+	articalAuthor,
+}) {
 	const [comments, setComments] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const { article_id } = useParams()
+	const [deleted, setDeleted] = useState(false)
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -24,7 +29,7 @@ export default function CommentsList({ totalComments, newComment }) {
 				setIsLoading(false)
 				return err
 			})
-	}, [article_id, newComment])
+	}, [article_id, newComment, deleted])
 
 	if (isLoading) {
 		return (
@@ -46,10 +51,12 @@ export default function CommentsList({ totalComments, newComment }) {
 						return (
 							<CommentCard
 								id={comment.comment_id}
-								author={comment.author}
+								commentAuthor={comment.author}
 								body={comment.body}
 								date={comment.created_at.slice(0, 10)}
 								votes={comment.votes}
+								articalAuthor={articalAuthor}
+								setDeleted={setDeleted}
 							/>
 						)
 					})}

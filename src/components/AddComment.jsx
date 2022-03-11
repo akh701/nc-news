@@ -9,7 +9,6 @@ export default function AddComment({
 	articalAuthor,
 	commentSuccess,
 	setCommentSuccess,
-	setComments,
 }) {
 	const [newComment, setNewComment] = useState({ body: "", username: "" })
 	const { loggedInUser } = useContext(UserContext)
@@ -29,7 +28,7 @@ export default function AddComment({
 		if (!loggedInUser.username) {
 			navigate("/login")
 		}
-		console.log(newComment)
+
 		if (newComment.body.length) {
 			setIsLoading(true)
 			api
@@ -50,6 +49,7 @@ export default function AddComment({
 					return err
 				})
 		}
+		setCommentSuccess(false)
 
 		togglePopup()
 	}
