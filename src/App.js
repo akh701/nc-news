@@ -11,6 +11,7 @@ import LoginPage from "./components/LoginPage"
 
 function App() {
 	const [loggedInUser, setLoggedInUser] = useState({})
+
 	return (
 		<UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
 			<Header loggedInUser={loggedInUser} />

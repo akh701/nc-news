@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useSearchParams } from "react-router-dom"
 import * as api from "../api"
 import ArticleCard from "./ArticleCard"
 import LoadingCircle from "./LoadingCircle"
@@ -9,12 +9,21 @@ export default function ArticlesList() {
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const { topic } = useParams()
+	const [searchParams, setSearchParams] = useSearchParams({})
+	let sort
+	let order
+	if (searchParams) {
+		sort = searchParams.get("sort_by")
+		order = searchParams.get("order")
+		console.log(sort)
+	}
 
 	useEffect(() => {
+		console.log("we are here")
 		setIsLoading(true)
 
 		api
-			.fetchArticles(topic)
+			.fetchArticles(topic, sort, order)
 			.then(articles => {
 				setIsLoading(false)
 				setArticlesList(articles)
@@ -25,7 +34,7 @@ export default function ArticlesList() {
 				setIsLoading(false)
 				return err
 			})
-	}, [topic])
+	}, [topic, sort, order])
 
 	if (isLoading) {
 		return (
