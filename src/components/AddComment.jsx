@@ -22,6 +22,7 @@ export default function AddComment({
 
 	const togglePopup = () => {
 		setIsOpen(!isOpen)
+		if (isOpen) setNewComment(currComment => ({ ...currComment, body: "" }))
 	}
 
 	const submitNewComment = () => {
@@ -33,7 +34,7 @@ export default function AddComment({
 			setIsLoading(true)
 			api
 				.postNewComment(article_id, newComment)
-				.then(comment => {
+				.then(() => {
 					// const postedComment = { ...comment }
 					setIsLoading(false)
 					setCommentSuccess(true)
