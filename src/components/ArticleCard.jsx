@@ -17,7 +17,7 @@ export default function ArticleCard({
 				<div className='card_head'>
 					<h3>{title}</h3>
 					<h5>
-						By <Link to={`/author/${author}`}>{author}</Link>
+						By <Link to={`/articles/${author}`}>{author}</Link>
 					</h5>
 				</div>
 			</Link>

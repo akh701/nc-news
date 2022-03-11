@@ -4,9 +4,9 @@ const ncNewsApi = axios.create({
 	baseURL: "http://ahmed-nc-news.herokuapp.com/api",
 })
 
-export function fetchArticles(topic) {
+export function fetchArticles(topic, sort_by, order) {
 	return ncNewsApi
-		.get("/articles", { params: { topic } })
+		.get("/articles", { params: { topic, sort_by, order } })
 		.then(({ data: { articles } }) => {
 			return articles
 		})

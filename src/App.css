@@ -83,6 +83,9 @@ body {
 	padding: 0;
 	width: 100%;
 	margin-top: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .header-topics {
 	display: flex;
@@ -106,6 +109,21 @@ ul {
 .header-topics li a {
 	text-decoration: none;
 	color: black;
+}
+
+.sort_by {
+}
+select {
+	margin-right: 35px;
+	border: none;
+	border-radius: 2px;
+	color: black;
+	background-color: #edf6f9;
+	/* margin: 0.25em; */
+	padding: 6px 15px;
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: smaller;
 }
 
 .footer {
@@ -359,6 +377,7 @@ hr {
 	cursor: pointer;
 	color: black;
 }
+
 .users {
 	color: #000000;
 	width: 100%;
@@ -371,6 +390,12 @@ hr {
 	position: relative;
 
 	display: inline-block;
+}
+
+.dropdown-sortBy {
+	position: relative;
+	display: inline-block;
+	margin-left: 35px;
 }
 
 .dropdown-content {
@@ -401,10 +426,6 @@ hr {
 
 .dropdown:hover .dropdown-content {
 	display: block;
-}
-
-.dropdown:hover .dropbtn {
-	/* background-color: #3e8e41; */
 }
 
 .error {

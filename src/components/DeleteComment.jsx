@@ -2,7 +2,6 @@ import { useContext, useState } from "react"
 import * as api from "../api"
 import { UserContext } from "../contexts/UserContext"
 import LoadingCircle from "./LoadingCircle"
-import Popup from "./Popup"
 
 export default function DeleteComment({
 	comment_id,
@@ -54,12 +53,6 @@ export default function DeleteComment({
 	) {
 		return (
 			<>
-				{/* {isOpen && deleted && (
-					<Popup
-						content={<h3 className='success'>your comment has been deleted</h3>}
-						handleClose={togglePopup}
-					/>
-				)} */}
 				<span onClick={handleCommentDeletion} className='comment-delete'>
 					x
 				</span>

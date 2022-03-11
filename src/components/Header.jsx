@@ -1,9 +1,17 @@
 import React from "react"
 import logo from "../logo.png"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import RegisteredUsers from "./RegisteredUsers"
 
 export default function Header({ loggedInUser }) {
+	const [searchParams, setSearchParams] = useSearchParams({})
+	const handleSortBy = e => {
+		setSearchParams({
+			sort_by: e.target.value.split(",")[0],
+			order: e.target.value.split(",")[1],
+		})
+	}
+
 	return (
 		<>
 			<header className='full-screen-header'>
@@ -33,6 +41,13 @@ export default function Header({ loggedInUser }) {
 							<Link to='articles/topic/cooking'>Cooking</Link>
 						</li>
 					</ul>
+
+					<select onChange={handleSortBy} name='sort_by'>
+						<option value={["created_at", "asc"]}>Earliest by Date</option>
+						<option value={["created_at", "desc"]}>Latest by Date</option>
+						<option value={["votes", "desc"]}>highest Votes</option>
+						<option value={["votes", "asc"]}>lowest Votes</option>
+					</select>
 				</div>
 			</header>
 		</>
