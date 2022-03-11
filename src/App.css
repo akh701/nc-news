@@ -388,7 +388,7 @@ hr {
 }
 .dropdown {
 	position: relative;
-
+	margin-right: 15px;
 	display: inline-block;
 }
 
@@ -482,4 +482,16 @@ hr {
 	text-align: center;
 	border: 1px solid #999;
 	font-size: 20px;
+}
+
+.login-page {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border: 1px solid #e5e5e5;
+	/* margin-bottom: 60px; */
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
