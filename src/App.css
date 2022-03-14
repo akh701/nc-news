@@ -129,7 +129,7 @@ select {
 .footer {
 	align-items: center;
 	text-align: center;
-	background-color: #14213d;
+	background-color: black;
 	padding: 0.5rem 1rem;
 	color: white;
 	height: 50px;
@@ -494,4 +494,11 @@ hr {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+}
+.logout {
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
 }
