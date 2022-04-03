@@ -9,13 +9,12 @@ export default function ArticlesList() {
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const { topic } = useParams()
-	const [searchParams, setSearchParams] = useSearchParams({})
+	const [searchParams] = useSearchParams({})
 	let sort
 	let order
 	if (searchParams) {
 		sort = searchParams.get("sort_by")
 		order = searchParams.get("order")
-		console.log(sort)
 	}
 
 	useEffect(() => {

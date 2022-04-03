@@ -23,7 +23,7 @@ export default function Votes({ votes, author }) {
 			return err
 		})
 	}
-	// console.log(articeleVotes)
+	
 	if (error) {
 		return <h1>{error}</h1>
 	}
