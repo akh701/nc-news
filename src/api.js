@@ -1,36 +1,36 @@
-import axios from "axios"
+import axios from "axios";
 
 const ncNewsApi = axios.create({
-	baseURL: "http://ahmed-nc-news.herokuapp.com/api",
-})
+	baseURL: "https://ahmed-nc-news.herokuapp.com/api",
+});
 
 export function fetchArticles(topic, sort_by, order) {
 	return ncNewsApi
 		.get("/articles", { params: { topic, sort_by, order } })
 		.then(({ data: { articles } }) => {
-			return articles
-		})
+			return articles;
+		});
 }
 
 export function fetchArticleById(article_id) {
 	return ncNewsApi
 		.get(`/articles/${article_id}`)
 		.then(({ data: { article } }) => {
-			return article
-		})
+			return article;
+		});
 }
 export function fetchUsers() {
 	return ncNewsApi.get("/users").then(({ data: { users } }) => {
-		return users
-	})
+		return users;
+	});
 }
 
 export function fetchComments(article_id) {
 	return ncNewsApi
 		.get(`/articles/${article_id}/comments`)
 		.then(({ data: { comments } }) => {
-			return comments
-		})
+			return comments;
+		});
 }
 
 export function patchArticleVote(article_id, votes) {
@@ -40,21 +40,21 @@ export function patchArticleVote(article_id, votes) {
 				article: { votes },
 			},
 		}) => {
-			return votes
+			return votes;
 		}
-	)
+	);
 }
 
 export function postNewComment(article_id, newComment) {
 	return ncNewsApi
 		.post(`/articles/${article_id}/comments`, newComment)
 		.then(({ data: { comment } }) => {
-			return comment
-		})
+			return comment;
+		});
 }
 
 export function deleteComment(comment_id) {
 	return ncNewsApi.delete(`/comments/${comment_id}`).catch(err => {
-		return err
-	})
+		return err;
+	});
 }
