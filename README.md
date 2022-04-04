@@ -21,7 +21,7 @@ To run this project you will need to clone this repository onto your local machi
 
 `$ git clone` https://github.com/akh701/nc-news.git
 
-Link to deployed version: []
+Link to deployed version: [https://nc-news2022.netlify.app/]
 
 Navigate inside the folder and install all dependencies by entering the following commands on your terminal:
 

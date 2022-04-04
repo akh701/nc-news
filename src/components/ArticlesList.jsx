@@ -18,7 +18,6 @@ export default function ArticlesList() {
 	}
 
 	useEffect(() => {
-		console.log("we are here")
 		setIsLoading(true)
 
 		api
