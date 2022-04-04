@@ -9,7 +9,7 @@ export default function ArticlesList() {
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const { topic } = useParams()
-	const [searchParams] = useSearchParams({})
+	const [searchParams, setSearchParams] = useSearchParams({})
 	let sort
 	let order
 	if (searchParams) {

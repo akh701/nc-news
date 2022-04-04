@@ -4,7 +4,7 @@ import { Link, useSearchParams } from "react-router-dom"
 import RegisteredUsers from "./RegisteredUsers"
 
 export default function Header({ loggedInUser }) {
-	const [setSearchParams] = useSearchParams({})
+	const [searchParams,setSearchParams] = useSearchParams({})
 	const handleSortBy = e => {
 		setSearchParams({
 			sort_by: e.target.value.split(",")[0],
